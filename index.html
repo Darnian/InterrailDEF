@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>INTERRAIL 2025 - Ruta por Europa</title>
-<meta name="description" content="Itinerario completo del Interrail 2025 por 9 países europeos con información detallada de cada ciudad">
-<meta property="og:title" content="INTERRAIL 2025 - Ruta por Europa">
-<meta property="og:image" content="https://www.hola.com/horizon/landscape/d4a4acf4b090-atenas-partenon-acropolis-t.jpg">
+<title>INTERRAIL 2025</title>
 
 <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
 <!-- Swiper CSS for sliders -->
@@ -41,29 +36,20 @@
     --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
     --radius: 8px;
     --transition: all 0.3s ease;
-    --font-base: 1rem;
-    --font-lg: 1.2rem;
-    --font-xl: 1.5rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
-    --toast-bg: rgba(0, 0, 0, 0.8);
   }
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
     :root {
-      --primary: #4da6ff;
+      --primary: #1a8ae4;
       --primary-light: #0077cc;
-      --text: #f5f5f5;
+      --text: #f0f0f0;
       --text-light: #aaa;
       --bg: #121212;
       --card-bg: #1e1e1e;
       --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.4);
-      --toast-bg: rgba(255, 255, 255, 0.9);
     }
-    transition: color 0.5s ease, background-color 0.5s ease;
   }
 
   * {
@@ -78,15 +64,11 @@
     color: var(--text);
     line-height: 1.6;
     transition: var(--transition);
-    font-size: var(--font-base);
   }
   h1, h2, h3 {
     font-weight: 700;
     color: var(--text);
   }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.4rem; }
   a {
     color: var(--primary);
     text-decoration: none;
@@ -98,21 +80,21 @@
   }
   main {
     max-width: 1100px;
-    margin: var(--space-lg) auto 4rem;
-    padding: 0 var(--space-md);
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
   }
   header {
     text-align: center;
-    padding-bottom: var(--space-sm);
+    padding-bottom: 1rem;
     border-bottom: 3px solid var(--primary);
     position: relative;
-    margin-bottom: var(--space-lg);
   }
   header h1 {
     margin-bottom: 0.2rem;
+    font-size: 2rem;
   }
   header p {
-    font-size: var(--font-lg);
+    font-size: 1.1rem;
     color: var(--text-light);
   }
 
@@ -120,20 +102,20 @@
   .controls {
     display: flex;
     justify-content: space-between;
-    margin: var(--space-lg) 0;
+    margin: 1.5rem 0;
     flex-wrap: wrap;
-    gap: var(--space-md);
+    gap: 1rem;
   }
   .filter-buttons {
     display: flex;
-    gap: var(--space-sm);
+    gap: 0.5rem;
     flex-wrap: wrap;
   }
   .filter-btn {
     background: var(--card-bg);
     border: 1px solid var(--primary);
     color: var(--primary);
-    padding: var(--space-sm) var(--space-md);
+    padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
     transition: var(--transition);
@@ -147,14 +129,14 @@
     background: var(--card-bg);
     border: 1px solid #ffcc00;
     color: #ffcc00;
-    padding: var(--space-sm) var(--space-md);
+    padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
     transition: var(--transition);
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0.5rem;
   }
   .favorites-toggle:hover, .favorites-toggle.active {
     background: #ffcc00;
@@ -166,29 +148,29 @@
     background: var(--primary);
     color: #fff;
     padding: 1.8rem 1rem;
-    margin: var(--space-lg) 0;
+    margin: 2rem 0;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
   section.stats h2 {
     text-align: center;
-    margin-bottom: var(--space-md);
+    margin-bottom: 1rem;
   }
   section.stats ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-    gap: var(--space-md);
+    gap: 1rem;
     padding: 0;
     margin: 0;
   }
   section.stats li {
     background: var(--primary-light);
     border-radius: 6px;
-    padding: var(--space-md);
+    padding: 1rem;
     text-align: center;
     font-weight: 600;
-    font-size: var(--font-lg);
+    font-size: 1.1rem;
     box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease;
   }
@@ -197,7 +179,7 @@
   }
   
   /* Sección ciudades */
-  article.city {
+  section.city {
     margin-bottom: 3rem;
     background: var(--card-bg);
     padding: 1.5rem 1rem;
@@ -208,10 +190,10 @@
     opacity: 1;
     transform: translateY(0);
   }
-  article.city.hidden {
+  section.city.hidden {
     display: none;
   }
-  article.city.favorite::before {
+  section.city.favorite::before {
     content: "★";
     position: absolute;
     top: 1rem;
@@ -220,7 +202,7 @@
     font-size: 1.5rem;
     z-index: 1;
   }
-  article.city h2 {
+  section.city h2 {
     font-size: 1.8rem;
     margin-bottom: 0.25rem;
     display: flex;
@@ -239,25 +221,25 @@
     color: #ffcc00;
     transform: scale(1.1);
   }
-  article.city .transport {
+  section.city .transport {
     background: var(--primary);
     color: white;
     font-weight: 700;
     padding: 0.25rem 0.8rem;
     border-radius: 4px;
     font-size: 1rem;
-    margin-bottom: var(--space-md);
+    margin-bottom: 1rem;
     display: inline-block;
   }
-  article.city ul.info-list {
+  section.city ul.info-list {
     list-style: none;
     padding-left: 0;
     margin-bottom: 1.2rem;
   }
-  article.city ul.info-list li {
-    margin-bottom: var(--space-sm);
+  section.city ul.info-list li {
+    margin-bottom: 0.5rem;
   }
-  article.city ul.info-list li strong {
+  section.city ul.info-list li strong {
     color: var(--primary);
   }
 
@@ -267,7 +249,7 @@
     height: 260px;
     border-radius: var(--radius);
     overflow: hidden;
-    margin-bottom: var(--space-md);
+    margin-bottom: 1rem;
     box-shadow: var(--shadow-hover);
     transition: var(--transition);
   }
@@ -288,17 +270,15 @@
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin-bottom: 3rem;
-    overflow-x: auto;
   }
   section.trayectos h2 {
     text-align: center;
-    margin-bottom: var(--space-md);
+    margin-bottom: 1rem;
   }
   table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    min-width: 600px;
   }
   thead {
     background: var(--primary);
@@ -384,59 +364,6 @@
     background: var(--primary-light);
   }
 
-  /* Toast notifications */
-  .toast-notification {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--toast-bg);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 4px;
-    z-index: 1000;
-    animation: fadeInOut 3s ease forwards;
-  }
-  
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-  }
-
-  /* Navigation index */
-  .nav-index {
-    position: sticky;
-    top: 20px;
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
-    z-index: 100;
-  }
-  .nav-index h3 {
-    margin-bottom: 0.5rem;
-    color: var(--primary);
-  }
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .nav-links a {
-    padding: 0.3rem 0.6rem;
-    background: rgba(0, 119, 204, 0.1);
-    border-radius: 4px;
-    transition: var(--transition);
-  }
-  .nav-links a:hover {
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-  }
-
   /* Animations */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -454,12 +381,6 @@
 
   /* Responsive */
   @media (max-width: 600px) {
-    :root {
-      --font-base: 0.9rem;
-      --font-lg: 1rem;
-      --font-xl: 1.3rem;
-    }
-    
     section.stats ul {
       grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
     }
@@ -478,9 +399,6 @@
     .favorites-toggle {
       margin: 0 auto;
     }
-    #map {
-      height: 300px;
-    }
   }
 </style>
 </head>
@@ -490,24 +408,6 @@
   <p>Del 15 de Julio al 8 de Agosto, 2025</p>
 </header>
 <main>
-
-<!-- Navigation Index -->
-<nav class="nav-index" aria-label="Índice de ciudades">
-  <h3>Ruta del Viaje</h3>
-  <div class="nav-links">
-    <a href="#atenas">Atenas</a>
-    <a href="#thessaloniki">Thessaloniki</a>
-    <a href="#sofia">Sofía</a>
-    <a href="#bucharest">Bucharest</a>
-    <a href="#budapest">Budapest</a>
-    <a href="#varsovia">Varsovia</a>
-    <a href="#viena">Viena</a>
-    <a href="#bolonia">Bolonia</a>
-    <a href="#turin">Turín</a>
-    <a href="#lyon">Lyon</a>
-    <a href="#barcelona">Barcelona</a>
-  </div>
-</nav>
 
 <!-- Estadísticas -->
 <section class="stats" aria-label="Características del viaje">
@@ -538,7 +438,7 @@
 </div>
 
 <!-- Ciudades -->
-<article class="city" id="atenas" tabindex="0" data-transport="flight" data-country="grecia">
+<section class="city" id="atenas" tabindex="0" data-transport="flight">
   <h2>Atenas (15–19 Julio)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">✈️ Vuelo Barcelona → Atenas (2h 55min)</div>
@@ -558,9 +458,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="thessaloniki" tabindex="0" data-transport="train" data-country="grecia">
+<section class="city" id="thessaloniki" tabindex="0" data-transport="train">
   <h2>Thessaloniki (19–20 Julio)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Atenas → Thessaloniki (5h)</div>
@@ -580,9 +480,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="sofia" tabindex="0" data-transport="bus" data-country="bulgaria">
+<section class="city" id="sofia" tabindex="0" data-transport="bus">
   <h2>Sofía (20–22 Julio)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚌 Bus Thessaloniki → Sofía (5h)</div>
@@ -602,9 +502,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="bucharest" tabindex="0" data-transport="train" data-country="rumania">
+<section class="city" id="bucharest" tabindex="0" data-transport="train">
   <h2>Bucharest (22–25 Julio)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Sofía → Bucharest (10h 42min)</div>
@@ -624,9 +524,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="budapest" tabindex="0" data-transport="train" data-country="hungria">
+<section class="city" id="budapest" tabindex="0" data-transport="train">
   <h2>Budapest (26–29 Julio)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Bucharest → Budapest (15h)</div>
@@ -646,9 +546,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="varsovia" tabindex="0" data-transport="train" data-country="polonia">
+<section class="city" id="varsovia" tabindex="0" data-transport="train">
   <h2>Varsovia (29 Julio–2 Agosto)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Budapest → Varsovia (11h)</div>
@@ -668,9 +568,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="viena" tabindex="0" data-transport="train" data-country="austria">
+<section class="city" id="viena" tabindex="0" data-transport="train">
   <h2>Viena (2–3 Agosto)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Varsovia → Viena (8h)</div>
@@ -690,9 +590,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="bolonia" tabindex="0" data-transport="train" data-country="italia">
+<section class="city" id="bolonia" tabindex="0" data-transport="train">
   <h2>Bolonia (4–6 Agosto)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren nocturno Viena → Bolonia (10h 20min)</div>
@@ -712,9 +612,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="turin" tabindex="0" data-transport="train" data-country="italia">
+<section class="city" id="turin" tabindex="0" data-transport="train">
   <h2>Turín (6–7 Agosto)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Bolonia → Turín (2h 17min)</div>
@@ -734,9 +634,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="lyon" tabindex="0" data-transport="train" data-country="francia">
+<section class="city" id="lyon" tabindex="0" data-transport="train">
   <h2>Lyon (7–8 Agosto)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Turín → Lyon (5h)</div>
@@ -756,9 +656,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
-<article class="city" id="barcelona" tabindex="0" data-transport="train" data-country="espana">
+<section class="city" id="barcelona" tabindex="0" data-transport="train">
   <h2>Barcelona (8 Agosto)</h2>
   <button class="favorite-btn" aria-label="Añadir a favoritos"><i class="far fa-star"></i></button>
   <div class="transport" aria-label="Transporte">🚆 Tren Lyon → Barcelona (5h)</div>
@@ -778,7 +678,7 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-</article>
+</section>
 
 <!-- Tabla de trayectos -->
 <section class="trayectos">
@@ -948,56 +848,39 @@
     [41.3851, 2.1734]   // Barcelona
   ];
 
-  // Draw route with animation
-  const routeLine = L.polyline(routeCoordinates, {
+  // Draw route
+  L.polyline(routeCoordinates, {
     color: '#3498db',
     weight: 4,
     opacity: 0.7,
     dashArray: '5, 5'
   }).addTo(map);
 
-  // Add markers for cities with popup info
+  // Add markers for cities
   const cityMarkers = [
-    { coords: [41.3851, 2.1734], name: "Barcelona", type: "start", transport: "✈️ Avión", duration: "2h 55min" },
-    { coords: [37.9838, 23.7275], name: "Atenas", type: "city", transport: "🚆 Tren", duration: "5h" },
-    { coords: [40.6401, 22.9444], name: "Thessaloniki", type: "city", transport: "🚌 Bus", duration: "5h" },
-    { coords: [42.6977, 23.3219], name: "Sofia", type: "city", transport: "🚆 Tren", duration: "10h 42min" },
-    { coords: [44.4268, 26.1025], name: "Bucharest", type: "city", transport: "🚆 Tren", duration: "15h" },
-    { coords: [47.4979, 19.0402], name: "Budapest", type: "city", transport: "🚆 Tren", duration: "11h" },
-    { coords: [52.2297, 21.0122], name: "Varsovia", type: "city", transport: "🚆 Tren", duration: "8h" },
-    { coords: [48.2082, 16.3738], name: "Viena", type: "city", transport: "🚆 Tren nocturno", duration: "10h 20min" },
-    { coords: [44.4949, 11.3426], name: "Bolonia", type: "city", transport: "🚆 Tren", duration: "2h 17min" },
-    { coords: [45.0703, 7.6869], name: "Turín", type: "city", transport: "🚆 Tren", duration: "5h" },
-    { coords: [45.7640, 4.8357], name: "Lyon", type: "city", transport: "🚆 Tren", duration: "5h" }
+    { coords: [41.3851, 2.1734], name: "Barcelona", type: "start" },
+    { coords: [37.9838, 23.7275], name: "Atenas", type: "city" },
+    { coords: [40.6401, 22.9444], name: "Thessaloniki", type: "city" },
+    { coords: [42.6977, 23.3219], name: "Sofia", type: "city" },
+    { coords: [44.4268, 26.1025], name: "Bucharest", type: "city" },
+    { coords: [47.4979, 19.0402], name: "Budapest", type: "city" },
+    { coords: [52.2297, 21.0122], name: "Varsovia", type: "city" },
+    { coords: [48.2082, 16.3738], name: "Viena", type: "city" },
+    { coords: [44.4949, 11.3426], name: "Bolonia", type: "city" },
+    { coords: [45.0703, 7.6869], name: "Turín", type: "city" },
+    { coords: [45.7640, 4.8357], name: "Lyon", type: "city" }
   ];
 
   cityMarkers.forEach(city => {
     const color = city.type === "start" ? '#e74c3c' : '#2ecc71';
-    const marker = L.circleMarker(city.coords, {
+    L.circleMarker(city.coords, {
       radius: 8,
       fillColor: color,
       color: "#fff",
       weight: 2,
       opacity: 1,
       fillOpacity: 0.8
-    }).addTo(map);
-    
-    marker.bindPopup(`
-      <b>${city.name}</b><br>
-      Transporte: ${city.transport}<br>
-      Duración: ${city.duration}
-    `);
-    
-    // Highlight route segment on hover
-    marker.on('mouseover', () => {
-      const index = cityMarkers.findIndex(c => c.name === city.name);
-      if (index > 0) {
-        const segment = [cityMarkers[index-1].coords, city.coords];
-        L.polyline(segment, {color: '#ff0', weight: 4}).addTo(map)
-          .bindPopup(`De ${cityMarkers[index-1].name} a ${city.name}`)
-          .openPopup();
-      }
-    });
+    }).addTo(map).bindPopup(`<b>${city.name}</b>`);
   });
 
   // Fit map to bounds
@@ -1027,15 +910,6 @@
           }
         }
       });
-      
-      // Announce filter change for screen readers
-      const filterNames = {
-        'all': 'Todos',
-        'train': 'Tren',
-        'bus': 'Bus',
-        'flight': 'Avión'
-      };
-      showToast(`Mostrando: ${filterNames[filter]}`);
     });
   });
 
@@ -1043,27 +917,15 @@
   function toggleFavorite(cityId) {
     const favorites = JSON.parse(localStorage.getItem('travelFavorites')) || [];
     const index = favorites.indexOf(cityId);
-    const wasAdded = index === -1;
     
-    if (wasAdded) {
+    if (index === -1) {
       favorites.push(cityId);
-      showToast(`${document.getElementById(cityId).querySelector('h2').textContent} añadido a favoritos`);
     } else {
       favorites.splice(index, 1);
-      showToast(`${document.getElementById(cityId).querySelector('h2').textContent} eliminado de favoritos`);
     }
     
     localStorage.setItem('travelFavorites', JSON.stringify(favorites));
     updateFavoriteButtons();
-  }
-
-  function showToast(message) {
-    const toast = document.createElement('div');
-    toast.className = 'toast-notification';
-    toast.textContent = message;
-    toast.setAttribute('aria-live', 'polite');
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
   }
 
   function updateFavoriteButtons() {
@@ -1107,8 +969,6 @@
         city.classList.remove('hidden');
       }
     });
-    
-    showToast(showFavorites ? 'Mostrando solo favoritos' : 'Mostrando todas las ciudades');
   });
 
   // Back to top button
